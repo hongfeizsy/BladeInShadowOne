@@ -10,8 +10,14 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
-/Assets/Asset Packages/PolygonSamurai
-/Assets/Samples/Terrain Tools
+/Assets/Asset Packages/PolygonSamurai/
+/Assets/Asset Packages/GrassFlowers/
+/Assets/Asset Packages/ADG_Textures/
+/Assets/Asset Packages/Shurikens pack/
+/Assets/Samples/Terrain Tools/
+/Assets/Game/Characters/
+/Assets/Game/Terrains/
+/Assets/Scenes/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
