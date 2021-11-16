@@ -23,7 +23,7 @@ namespace RPG.Core
         {
             if (GetComponent<Health>().IsDead()) { return; }
 
-            if (InteractWithEnemy()) { return; }
+            //if (InteractWithEnemy()) { return; }
 
             if (InteractWithMovement()) { return; }
         }
