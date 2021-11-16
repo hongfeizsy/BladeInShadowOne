@@ -183,10 +183,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5766799921353027443, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: af381efb44083f84984a44274295e06f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
 --- !u!4 &373058725 stripped
@@ -210,17 +206,61 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.3
   m_Speed: 3.5
-  m_Acceleration: 100
+  m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 1000
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 0
+  m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &373058729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373058726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145d7e0653fe2974eb5936743a55f247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &373058730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373058726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc027317ba6789b498da3134c6551c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 1935998906}
+--- !u!114 &373058731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373058726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14f81133f315ce4ba670b7fb5fe0de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  ToDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &468619157
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +830,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &1935998902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7498170647865600754, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+  m_PrefabInstance: {fileID: 7498170647164142590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1935998906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935998902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c85e0b2ce395a46a5fdc63b59d26f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7498170647164142590
 PrefabInstance:
   m_ObjectHideFlags: 0
