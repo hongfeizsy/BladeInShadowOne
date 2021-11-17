@@ -23,7 +23,7 @@ namespace RPG.Combat
         AttackWave currentAttackWave;
         //float weaponRange;
         float attackEnemy;
-        float timeToFinishAttackAnimation = 0.8f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
+        float timeToFinishAttackAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
         float timeSinceAttack = 0f;
         bool isAttacking = false;
         float totalDamage;
@@ -69,7 +69,7 @@ namespace RPG.Combat
             GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Animator>().ResetTrigger("StopAttack");
             GetComponent<Animator>().SetTrigger("Attack");
-            GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
+            GetComponent<Animator>().SetFloat("RunMultiplier", 1.2f);
         }
 
         public bool IsAttacking()

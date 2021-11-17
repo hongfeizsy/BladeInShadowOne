@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2e176506e19f941a6d076fea0b2ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickWeapon: {fileID: 11400000, guid: d8b6fc86bc3863249b3f146d8412d0be, type: 2}
+  joystickWeapon: {fileID: 11400000, guid: 02f1452a23d66e44a87a78c422b06441, type: 2}
 --- !u!1001 &2640507378810307283
 PrefabInstance:
   m_ObjectHideFlags: 0
