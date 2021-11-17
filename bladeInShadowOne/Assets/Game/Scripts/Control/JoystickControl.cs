@@ -8,7 +8,7 @@ using RPG.Resources;
 using System;
 using RPG.Combat;
 
-namespace RPG.Core
+namespace RPG.Control
 {
     public class JoystickControl : MonoBehaviour
     {
