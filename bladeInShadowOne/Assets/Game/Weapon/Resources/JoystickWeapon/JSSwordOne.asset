@@ -19,4 +19,4 @@ MonoBehaviour:
   percentageBonus: 0
   isRighthand: 1
   joystickProjectile: {fileID: 0}
-  attackWave: {fileID: 0}
+  attackWave: {fileID: 4918936476820950687, guid: a5359bd88ffc024439ab7bf41f211132, type: 3}
