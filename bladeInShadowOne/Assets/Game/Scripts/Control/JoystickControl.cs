@@ -84,7 +84,7 @@ namespace RPG.Control
 
         public Vector3 GetDirectionFacing()
         {
-            return transform.position + Vector3.up * capCollider.height / 2 + transform.TransformDirection(Vector3.forward * 10);
+            return transform.position + Vector3.up * capCollider.height / 3 + transform.TransformDirection(Vector3.forward * 10);
         }
     }
 }

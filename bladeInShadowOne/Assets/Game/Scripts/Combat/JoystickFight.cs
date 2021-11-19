@@ -9,7 +9,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityStandardAssets.CrossPlatformInput;
 
-
 namespace RPG.Combat
 {
     public class JoystickFight : MonoBehaviour, IAction, IModifierProvider
@@ -18,6 +17,7 @@ namespace RPG.Combat
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] JoystickWeapon defaultJoystickWeapon = null;
         [SerializeField] UnityEvent attackEvent;
+        //[SerializeField] JoystickProjectile tempJSProjectile;
 
         JoystickWeapon currentJoystickWeapon;
         AttackWave currentAttackWave;
@@ -96,7 +96,11 @@ namespace RPG.Combat
             totalDamage = GetComponent<BaseStats>().GetDamage();
             if (currentJoystickWeapon.HasProjectile())
             {
-                currentJoystickWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, totalDamage);
+                //JoystickProjectile tempObject = Instantiate(tempJSProjectile, 
+                //    transform.position + transform.TransformDirection(Vector3.forward * 1), transform.rotation);
+                Vector3 instanPosition = transform.position + 
+                    Vector3.up * GetComponent<CapsuleCollider>().height / 3 + transform.TransformDirection(Vector3.forward * 1);
+                currentJoystickWeapon.LaunchProjectile(instanPosition, totalDamage);
             }
             else
             {

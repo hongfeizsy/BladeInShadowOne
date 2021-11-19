@@ -23,19 +23,19 @@ namespace RPG.Resources
 
         private void Start()
         {
-            ////It seems that RestoreState(object state) executed before Start().
-            //if (!isFromSavedFile && gameObject.tag == "Player")
-            //{
-            //    initialLevel = 1;
-            //    initialHealth = GetComponent<BaseStats>().GetHealth(initialLevel);
-            //    health = initialHealth;
-            //}
-            //if (!isFromSavedFile && gameObject.tag != "Player")
-            //{
-            //    initialLevel = 1;
-            //    initialHealth = GetComponent<BaseStats>().GetHealth(initialLevel);
-            //    health = initialHealth;
-            //}
+            //It seems that RestoreState(object state) executed before Start().
+            if (!isFromSavedFile && gameObject.tag == "Player")
+            {
+                initialLevel = 1;
+                initialHealth = GetComponent<BaseStats>().GetHealth(initialLevel);
+                health = initialHealth;
+            }
+            if (!isFromSavedFile && gameObject.tag != "Player")
+            {
+                initialLevel = 1;
+                initialHealth = GetComponent<BaseStats>().GetHealth(initialLevel);
+                health = initialHealth;
+            }
         }
 
         public void TakeDamage(GameObject instigator, float damage)

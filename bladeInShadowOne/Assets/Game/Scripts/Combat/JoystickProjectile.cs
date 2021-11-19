@@ -6,54 +6,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class JoystickProjectile : MonoBehaviour
+namespace RPG.Combat
 {
-    [SerializeField] float speed = 5;
-    //[SerializeField] bool isHoming = false;
-    [SerializeField] float maxLifeTime = 3f;
-    [SerializeField] GameObject hitEffect = null;
-    [SerializeField] GameObject[] destroyOnHit = null;
-    [SerializeField] float lifeAterImpact;
-    [SerializeField] UnityEvent onHit;
-
-    GameObject playerObject;
-    //GameObject instigator = null;
-    CapsuleCollider capCollider;
-    float damage;
-
-    private void Start()
+    public class JoystickProjectile : MonoBehaviour
     {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
-        transform.LookAt(playerObject.GetComponent<JoystickControl>().GetDirectionFacing());
-        capCollider = playerObject.GetComponent<CapsuleCollider>();
-    }
+        [SerializeField] float speed = 5;
+        //[SerializeField] bool isHoming = false;
+        [SerializeField] float maxLifeTime = 3f;
+        [SerializeField] GameObject hitEffect = null;
+        [SerializeField] GameObject[] destroyOnHit = null;
+        [SerializeField] float lifeAterImpact;
+        [SerializeField] UnityEvent onHit;
 
-    private void Update()
-    {
-        transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * speed);
-    }
+        GameObject playerObject;
+        //GameObject instigator = null;
+        CapsuleCollider capCollider;
+        float damage;
 
-    public void SetDamage(float damage)
-    {
-        this.damage = damage;
-        Destroy(gameObject, maxLifeTime);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Projectile>()) { return; }
-        Health targetHealth = other.GetComponent<Health>();
-        if (!targetHealth) return;
-        if (targetHealth.IsDead()) return;
-        GameObject FXEffect = Instantiate(hitEffect, other.transform.position + Vector3.up * (capCollider.height / 2),
-                Quaternion.identity);
-        targetHealth.TakeDamage(playerObject, this.damage);
-        onHit.Invoke();
-        speed = 0f;
-        foreach (GameObject toDestroy in destroyOnHit)
+        private void Start()
         {
-            Destroy(toDestroy);
+            playerObject = GameObject.FindGameObjectWithTag("Player");
+            transform.LookAt(playerObject.GetComponent<JoystickControl>().GetDirectionFacing());
+            capCollider = playerObject.GetComponent<CapsuleCollider>();
         }
-        Destroy(gameObject, lifeAterImpact);
+
+        private void Update()
+        {
+            transform.Translate(new Vector3(0, 0, 1) * Time.deltaTime * speed);
+        }
+
+        public void SetDamage(float damage)
+        {
+            this.damage = damage;
+            Destroy(gameObject, maxLifeTime);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.GetComponent<Projectile>()) { return; }
+            Health targetHealth = other.GetComponent<Health>();
+            if (!targetHealth) return;
+            if (targetHealth.IsDead()) return;
+            GameObject FXEffect = Instantiate(hitEffect, other.transform.position + Vector3.up * (capCollider.height / 2),
+                    Quaternion.identity);
+            targetHealth.TakeDamage(playerObject, this.damage);
+            onHit.Invoke();
+            speed = 0f;
+            foreach (GameObject toDestroy in destroyOnHit)
+            {
+                Destroy(toDestroy);
+            }
+            Destroy(gameObject, lifeAterImpact);
+        }
     }
 }

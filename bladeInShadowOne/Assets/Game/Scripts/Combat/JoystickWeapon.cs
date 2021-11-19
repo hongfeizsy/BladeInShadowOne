@@ -19,6 +19,12 @@ namespace RPG.Combat
 
         //[SerializeField] public AudioClip audioClip;
         const string weaponName = "Weapon";
+        GameObject playerObject;
+
+        private void Awake()
+        {
+            playerObject = GameObject.FindGameObjectWithTag("Player");
+        }
 
         public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
         {
@@ -26,7 +32,7 @@ namespace RPG.Combat
             if (weaponPrefab != null)
             {
                 Transform handTransform = GetHandTransition(rightHandTransform, leftHandTransform);
-                WeaponComponent clonedWeapon = Instantiate(weaponPrefab, handTransform);
+                WeaponComponent clonedWeapon = Instantiate(weaponPrefab, handTransform, false);
                 clonedWeapon.gameObject.name = weaponName;
             }
             if (weaponOverride != null)
@@ -52,10 +58,10 @@ namespace RPG.Combat
 
         public bool HasProjectile() { return joystickProjectile != null; }
 
-        public void LaunchProjectile(Transform rightHandTransform, Transform leftHandTransform, float damage)
+        public void LaunchProjectile(Vector3 instanPosition, float damage)
         {
             JoystickProjectile projectileInstance = Instantiate(joystickProjectile,
-                GetHandTransition(rightHandTransform, leftHandTransform).position, Quaternion.identity);
+                instanPosition, Quaternion.identity);
             projectileInstance.SetDamage(damage);
         }
 
