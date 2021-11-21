@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: eee72c14ec4d7df4ab4e26c6fa6f7933, type: 2}
+--- !u!1 &58290786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5766799921343503525, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+  m_PrefabInstance: {fileID: 373058724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &58290787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58290786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edfd364b57d42554e9e563dbfe0ec874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &153994477 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7498170647279240979, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
@@ -947,7 +964,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  tempJSProjectile: {fileID: 2330169107511673428, guid: 57235e21135db6b4ba015211da0b8ecf, type: 3}
 --- !u!114 &996841742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,6 +1589,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+--- !u!1 &7498170647164142591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7498170647582924644, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+  m_PrefabInstance: {fileID: 7498170647164142590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7498170647164142592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7498170647582924642, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+  m_PrefabInstance: {fileID: 7498170647164142590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498170647164142591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7498170647164142593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498170647164142591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9433962, g: 0.93237466, b: 0.5473478, a: 1}
+    m_PressedColor: {r: 0.9245283, g: 0.7955891, b: 0.10902455, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7498170647164142592}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7498170647164142594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498170647164142591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab98b66288df7b4fa182075f2f12bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisName: Escape
+  axisValue: 1
+  responseSpeed: 1000
+  returnToCentreSpeed: 3
 --- !u!1001 &8450385592210895699
 PrefabInstance:
   m_ObjectHideFlags: 0

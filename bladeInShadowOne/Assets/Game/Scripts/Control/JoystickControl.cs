@@ -23,9 +23,22 @@ namespace RPG.Control
         {
             if (GetComponent<Health>().IsDead()) { return; }
 
+            if (InteractWithEscape()) { return; }
+
             if (InteractWithEnemy()) { return; }
 
             if (InteractWithMovement()) { return; }
+        }
+
+        private bool InteractWithEscape()
+        {
+            JoystickEscape joystickEscape = GetComponent<JoystickEscape>();
+            if (joystickEscape.IsEscaping())
+            {
+                joystickEscape.StartEscapeAction();
+                return true;
+            }
+            return false;
         }
 
         private bool InteractWithEnemy()
