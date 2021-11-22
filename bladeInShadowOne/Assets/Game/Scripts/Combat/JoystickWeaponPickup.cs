@@ -14,7 +14,6 @@ namespace RPG.Combat
         {
             if (other.tag == "Player" && joystickWeapon != null)
             {
-                //Pickup(other.GetComponent<Fighter>());
                 PickUp(other.GetComponent<JoystickFight>());
             }
         }

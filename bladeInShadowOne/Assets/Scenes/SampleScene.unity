@@ -188,6 +188,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1412325610}
     m_Modifications:
+    - target: {fileID: 373058727, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 373058727, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 373058727, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 373058727, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 373058730, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: joystick
       value: 
@@ -197,6 +213,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1190693135, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896219447, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896219447, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

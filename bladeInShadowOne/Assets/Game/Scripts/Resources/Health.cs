@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine;
 using RPG.Saving;
 using RPG.Stats;
-
+using UnityEngine.AI;
 
 namespace RPG.Resources
 {
@@ -47,6 +47,7 @@ namespace RPG.Resources
             {
                 print(gameObject.name + " killed.");
                 ToDie.Invoke();
+                GetComponent<NavMeshAgent>().enabled = false;
                 Die();
                 if (instigator.GetComponent<Experience>())
                 {

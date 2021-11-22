@@ -4,6 +4,7 @@ using RPG.Stats;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace RPG.Combat
@@ -47,13 +48,17 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("StopEscape");
             GetComponent<Animator>().SetTrigger("Escape");
             GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+            GetComponent<NavMeshAgent>().height = 0.0f;
+            GetComponent<NavMeshAgent>().enabled = false;
         }
 
         public void Cancel()
         {
             GetComponent<Animator>().ResetTrigger("Escape");
             GetComponent<Animator>().SetTrigger("StopEscape");
-            GetComponent<JoystickMove>().Cancel();
+            GetComponent<NavMeshAgent>().height = 2f;
+            GetComponent<NavMeshAgent>().enabled = true;
+            //GetComponent<JoystickMove>().Cancel();
         }
 
         //public IEnumerable<float> GetAdditiveModifiers(Stat stat)

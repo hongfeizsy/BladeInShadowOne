@@ -17,12 +17,13 @@ namespace RPG.Movement
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
+            agent.enabled = !GetComponent<Health>().IsDead();
             maxSpeed = 4.5f;
         }
 
         void LateUpdate()
         {
-            agent.enabled = !GetComponent<Health>().IsDead();
+            //agent.enabled = !GetComponent<Health>().IsDead();
             UpdateAnimator();
         }
 
