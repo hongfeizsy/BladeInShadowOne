@@ -87,6 +87,8 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("Attack");
             GetComponent<Animator>().SetTrigger("StopAttack");
+            WeaponComponent weapon = FindWeaponComponent();
+            weapon.gameObject.SetActive(true);
             GetComponent<JoystickMove>().Cancel();
         }
 
@@ -101,6 +103,8 @@ namespace RPG.Combat
                 Vector3 instanPosition = transform.position + 
                     Vector3.up * GetComponent<CapsuleCollider>().height / 3 + transform.TransformDirection(Vector3.forward * 1);
                 currentJoystickWeapon.LaunchProjectile(instanPosition, totalDamage);
+                WeaponComponent weapon = FindWeaponComponent();
+                weapon.gameObject.SetActive(false);
             }
             else
             {
