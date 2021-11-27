@@ -72,47 +72,38 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.02
+  m_Time: 0.05
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.14285499
-        inSlope: 0
-        outSlope: 0
+        value: 0.9604209
+        inSlope: -0.7944327
+        outSlope: -0.7944327
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.43557373
-        value: 0.16091204
-        inSlope: -0.102655634
-        outSlope: -0.102655634
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.3270034
+        outWeight: 0.1585157
       - serializedVersion: 3
         time: 0.97342193
         value: 0.01785332
-        inSlope: -0.19684097
-        outSlope: -0.19684097
+        inSlope: -1.1586312
+        outSlope: -1.1586312
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.48412526
+        inWeight: 0.11597006
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0.41568628}
-      key1: {r: 1, g: 1, b: 1, a: 0.22745098}
+      key0: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0.13725491}
+      key1: {r: 1, g: 1, b: 1, a: 0.05490196}
       key2: {r: 0.2165511, g: 0.29838735, b: 0.98414075, a: 1}
       key3: {r: 0.07694017, g: 0.16500226, b: 0.8584906, a: 1}
       key4: {r: 0.99215686, g: 0.7143462, b: 0.6117647, a: 1}
@@ -460,7 +451,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5666175759628472352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.496}
+  m_LocalPosition: {x: 0, y: 0, z: -0.222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5666175759449782752}
@@ -510,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1451a54af8c33140ac0c602d77d22e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
   maxLifeTime: 3
   hitEffect: {fileID: 5483016056630809012, guid: b126ef75c1f4a1544b7c8cd931c804c1, type: 3}
   destroyOnHit: []
