@@ -10,7 +10,6 @@ namespace RPG.Combat
     {
         [SerializeField] AnimatorOverrideController weaponOverride;
         [SerializeField] WeaponComponent weaponPrefab = null;
-        [SerializeField] float weaponRange;
         [SerializeField] float weaponDamage;
         [SerializeField] float percentageBonus = 0;
         [SerializeField] bool isRighthand = true;

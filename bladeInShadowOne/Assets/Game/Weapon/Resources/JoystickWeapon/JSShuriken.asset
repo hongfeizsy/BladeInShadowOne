@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7899396d22191e4191681ffe46a395c, type: 3}
-  m_Name: JSUnarmed
+  m_Name: JSShuriken
   m_EditorClassIdentifier: 
-  weaponOverride: {fileID: 22100000, guid: e2afdfaf652eaf049852f70d72f181df, type: 2}
-  weaponPrefab: {fileID: 6144440679962561712, guid: 506017603a50d2e4c8ddadd6e9fb3c18, type: 3}
-  weaponRange: 0
+  weaponOverride: {fileID: 22100000, guid: 11cfdb596b86ccf40b01c9129fabd0ff, type: 2}
+  weaponPrefab: {fileID: 3579870472786124699, guid: 5969f5d7f725f62449d78135273c8f98, type: 3}
   weaponDamage: 0
   percentageBonus: 0
   isRighthand: 1
-  joystickProjectile: {fileID: 0}
-  attackWave: {fileID: 4104750445271595401, guid: b4c49e50a2bd91d4a89b98312e431ea1, type: 3}
+  joystickProjectile: {fileID: 2330169107511673428, guid: 380767d098450544b8e1c077ec8197ea, type: 3}
+  attackWave: {fileID: 0}
