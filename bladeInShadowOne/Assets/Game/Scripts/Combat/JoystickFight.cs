@@ -87,8 +87,8 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("Attack");
             GetComponent<Animator>().SetTrigger("StopAttack");
-            WeaponComponent weapon = FindWeaponComponent();
-            weapon.gameObject.SetActive(true);
+            //WeaponComponent weapon = FindWeaponComponent();
+            //weapon.gameObject.SetActive(true);
             GetComponent<JoystickMove>().Cancel();
         }
 
@@ -100,11 +100,11 @@ namespace RPG.Combat
             {
                 //JoystickProjectile tempObject = Instantiate(tempJSProjectile, 
                 //    transform.position + transform.TransformDirection(Vector3.forward * 1), transform.rotation);
+                WeaponComponent weapon = FindWeaponComponent();
+                weapon.gameObject.SetActive(false);
                 Vector3 instanPosition = transform.position + 
                     Vector3.up * GetComponent<CapsuleCollider>().height / 3 + transform.TransformDirection(Vector3.forward * 1);
                 currentJoystickWeapon.LaunchProjectile(instanPosition, totalDamage);
-                WeaponComponent weapon = FindWeaponComponent();
-                weapon.gameObject.SetActive(false);
             }
             else
             {
@@ -120,6 +120,12 @@ namespace RPG.Combat
         void Shoot()
         {
             Hit();
+        }
+
+        void ChangeWeapon()
+        {
+            // Be careful where the animation event is inserted. Due to Blend tree, the event may not be triggered.
+            EquipWeapon(defaultJoystickWeapon);
         }
 
         private void ActiveWeaponHolding(WeaponComponent weaponComponent)

@@ -8,5 +8,11 @@ namespace RPG.Combat
 {
     public class WeaponComponent : MonoBehaviour
     {
+        [SerializeField] bool isDisposable = false;
+
+        public bool GetIsDisposable()
+        {
+            return isDisposable;
+        }
     }
 }
