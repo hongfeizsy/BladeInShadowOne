@@ -36,6 +36,9 @@ MonoBehaviour:
       - 14
       - 20
       - 40
+    - stat: 1
+      level:
+      - 0
   - characterClass: 1
     stats:
     - stat: 0

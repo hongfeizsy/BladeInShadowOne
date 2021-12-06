@@ -4,7 +4,7 @@
     {
         Player,
         Grunt,
-        Mage,
+        warrior,
         Archer
     }
 }
