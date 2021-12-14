@@ -119,10 +119,10 @@ namespace RPG.Control
         {
             isAggregated = true;
             timeSinceAggrevated = 0f;
-            AggrevateNearEnemies();
+            AggravateNearbyEnemies();
         }
 
-        private void AggrevateNearEnemies()
+        private void AggravateNearbyEnemies()
         {
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up);
             foreach (RaycastHit hit in hits)

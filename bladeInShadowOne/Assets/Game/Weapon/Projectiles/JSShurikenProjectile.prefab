@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  maxLifeTime: 1
+  maxLifeTime: 1.5
   hitEffect: {fileID: 5483016056630809012, guid: b126ef75c1f4a1544b7c8cd931c804c1, type: 3}
   destroyOnHit: []
   lifeAterImpact: 0.1
