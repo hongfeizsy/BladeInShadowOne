@@ -31,7 +31,7 @@ namespace RPG.Control
                 Vector3 currentWaypoint = patrolPath.GetCurrentWaypointPos(currentWaypointIndex);
                 GetComponent<Move>().StartMoveAction(currentWaypoint, patrolSpeedFraction);
                 float distanceToWaypoint = Vector3.Distance(transform.position, currentWaypoint);
-                if (distanceToWaypoint < .13f)
+                if (distanceToWaypoint < .15f)
                 {
                     if (timeSinceArrivedAtWaypoint > waypointDwellTime)
                     {

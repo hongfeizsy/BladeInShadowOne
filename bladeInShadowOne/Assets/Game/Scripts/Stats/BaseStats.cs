@@ -60,10 +60,8 @@ namespace RPG.Stats
 
         public float GetDamage()
         {
-            float damageFromBS = progression.GetStatValue(characterClass, Stat.Damage, currentLevel) +
-                GetAdditiveModifier() * (1 + GetPercentageModifier() / 100);
-            return progression.GetStatValue(characterClass, Stat.Damage, currentLevel) +
-                GetAdditiveModifier() * (1 + GetPercentageModifier() / 100);
+            return (progression.GetStatValue(characterClass, Stat.Damage, currentLevel) +
+                GetAdditiveModifier()) * (1 + GetPercentageModifier() / 100);
         }
 
         public int CalculateLevel()
