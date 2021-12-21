@@ -48,7 +48,11 @@ namespace RPG.Control
 
             GameObject player = GameObject.FindWithTag("Player");
             float distanceToPlayer = Vector3.Distance(gameObject.transform.position, player.transform.position);
-            if (player.GetComponent<Health>().IsDead()) return;
+            if (player.GetComponent<Health>().IsDead()) 
+            {
+                GetComponent<Fight>().Cancel();
+                return; 
+            }
             if (distanceToPlayer < chaseDistance && !GetComponent<Health>().IsDead())
             {
                 isAlarmed = true;

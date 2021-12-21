@@ -38,7 +38,11 @@ namespace RPG.Combat
         {
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
-            if (target.IsDead()) { return; }
+            if (target.IsDead()) 
+            {
+                target = null; 
+                return; 
+            }
             if (GetComponent<Health>().IsDead()) { return; }
             bool isInRange = Vector3.Distance(transform.position, target.transform.position) <= weaponRange;
             
