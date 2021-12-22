@@ -19,3 +19,5 @@ MonoBehaviour:
   isRighthand: 1
   joystickProjectile: {fileID: 0}
   attackWave: {fileID: 4918936476820950687, guid: a5359bd88ffc024439ab7bf41f211132, type: 3}
+  timeToFinishAttackAnimation: 2.5
+  animationRunMultiplier: 1.2

@@ -17,21 +17,18 @@ namespace RPG.Combat
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] JoystickWeapon defaultJoystickWeapon = null;
         [SerializeField] UnityEvent attackEvent;
-        //[SerializeField] JoystickProjectile tempJSProjectile;
 
         JoystickWeapon currentJoystickWeapon;
         AttackWave currentAttackWave;
-        //float weaponRange;
         float attackEnemy;
-        float timeToFinishAttackAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
+        float timeToFinishAttackAnimation = 2.5f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
         float timeSinceAttack = 0f;
+        float animationRunMultiplier;
         bool isAttacking = false;
         float totalDamage;
-        //CapsuleCollider capCollider;
 
         private void Start()
         {
-            //capCollider = GetComponent<CapsuleCollider>();
             if (currentJoystickWeapon == null)
             {
                 EquipWeapon(defaultJoystickWeapon);
@@ -57,6 +54,8 @@ namespace RPG.Combat
         {
             currentJoystickWeapon = joystickWeapon;
             joystickWeapon.Spawn(rightHandTransform, leftHandTransform, GetComponent<Animator>());
+            timeToFinishAttackAnimation = joystickWeapon.GetTimeToFinishAttackAnimation();
+            animationRunMultiplier = joystickWeapon.GetAnimationRunMultiplier();
             if (currentJoystickWeapon.GetWeaponcomponent().transform.Find("HitSound"))
             {
                 transform.Find("SoundObjects").Find("MeleeSound").GetComponent<AudioSource>().clip =
@@ -69,7 +68,8 @@ namespace RPG.Combat
             GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Animator>().ResetTrigger("StopAttack");
             GetComponent<Animator>().SetTrigger("Attack");
-            GetComponent<Animator>().SetFloat("RunMultiplier", 1.2f);
+            //GetComponent<Animator>().SetFloat("RunMultiplier", 1.2f);
+            GetComponent<Animator>().SetFloat("RunMultiplier", animationRunMultiplier);
         }
 
         public bool IsAttacking()

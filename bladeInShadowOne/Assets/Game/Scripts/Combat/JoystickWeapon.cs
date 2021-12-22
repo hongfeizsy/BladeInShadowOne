@@ -15,8 +15,9 @@ namespace RPG.Combat
         [SerializeField] bool isRighthand = true;
         [SerializeField] JoystickProjectile joystickProjectile = null;
         [SerializeField] AttackWave attackWave = null;
+        [SerializeField] float timeToFinishAttackAnimation;
+        [SerializeField] float animationRunMultiplier;
 
-        //[SerializeField] public AudioClip audioClip;
         const string weaponName = "Weapon";
         GameObject playerObject;
 
@@ -49,8 +50,6 @@ namespace RPG.Combat
             return handTransform;
         }
 
-        //public float GetWeaponRange() { return weaponRange; }
-
         public float GetWeaponDamage() { return weaponDamage; }
 
         public float GetPercentageBonus() { return percentageBonus; }
@@ -77,5 +76,9 @@ namespace RPG.Combat
         public string GetWeaponName() { return weaponName; }
 
         public AttackWave GetAttackWave() { return attackWave; }
+
+        public float GetTimeToFinishAttackAnimation() { return timeToFinishAttackAnimation; }
+
+        public float GetAnimationRunMultiplier() { return animationRunMultiplier; }
     }
 }

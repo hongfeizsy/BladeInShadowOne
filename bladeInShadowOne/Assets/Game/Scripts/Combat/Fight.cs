@@ -73,7 +73,7 @@ namespace RPG.Combat
         {
             GetComponent<ActionScheduler>().StartAction(this);  // ActionScheduler.currentAction is RPG.Combat.Fighter, even Player is still moving towards to the target.
             target = combatTarget.GetComponent<Health>();
-            GetComponent<Animator>().SetFloat("RunMultiplier", 0.7f);
+            GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
         }
 
         public void Cancel()

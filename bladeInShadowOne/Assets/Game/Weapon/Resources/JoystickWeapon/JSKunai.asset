@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponOverride: {fileID: 22100000, guid: 6b1bedc32f1d4f643806b5f008f7f445, type: 2}
   weaponPrefab: {fileID: 3579870472786124699, guid: 2cd888105f8a582499231ff30a20eb42, type: 3}
-  weaponRange: 0
-  weaponDamage: 0
-  percentageBonus: 0
+  weaponDamage: 10
+  percentageBonus: 10
   isRighthand: 1
   joystickProjectile: {fileID: 2330169107511673428, guid: 57235e21135db6b4ba015211da0b8ecf, type: 3}
   attackWave: {fileID: 0}
+  timeToFinishAttackAnimation: 1
+  animationRunMultiplier: 1.2

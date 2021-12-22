@@ -6,8 +6,8 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordOneOverrideController
+  m_Name: NinjatoOverride
   m_Controller: {fileID: 9100000, guid: af381efb44083f84984a44274295e06f, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: dae8d219af2025947bb2e66d78e61a8b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: b998d9b59be663c408f51b2a00da4617, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1062dfde62f4ad942b634e84525e0fb1, type: 2}
