@@ -14,7 +14,7 @@ namespace RPG.Combat
         float ifEscape;
         bool isEscaping = false;
         float timeSinceEscape = 0f;
-        float timeToFinishEscapeAnimation = 1.2f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+        float timeToFinishEscapeAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
 
         private void Update()
         {
@@ -47,7 +47,7 @@ namespace RPG.Combat
             GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Animator>().ResetTrigger("StopEscape");
             GetComponent<Animator>().SetTrigger("Escape");
-            GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+            GetComponent<Animator>().SetFloat("RunMultiplier", 1.2f);
             GetComponent<NavMeshAgent>().height = 0.0f;
             GetComponent<NavMeshAgent>().enabled = false;
         }
@@ -58,12 +58,6 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("StopEscape");
             GetComponent<NavMeshAgent>().height = 2f;
             GetComponent<NavMeshAgent>().enabled = true;
-            //GetComponent<JoystickMove>().Cancel();
         }
-
-        //public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        //{
-        //    throw new System.NotImplementedException();
-        //}
     }
 }
