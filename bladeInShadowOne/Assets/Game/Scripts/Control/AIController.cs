@@ -8,8 +8,8 @@ namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
-        [SerializeField] float chaseDistance = 5f;
-        [SerializeField] float shoutDistance = 5f;
+        [SerializeField] float chaseDistance;
+        [SerializeField] float shoutDistance;
         [SerializeField] float suspicionTime = 3f;
         [SerializeField] PatrolPath patrolPath = null;
         [SerializeField] float waypointDwellTime = 2f;
