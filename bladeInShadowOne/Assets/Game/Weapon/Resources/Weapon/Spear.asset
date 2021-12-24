@@ -19,3 +19,5 @@ MonoBehaviour:
   percentageBonus: 0
   isRighthand: 1
   projectile: {fileID: 0}
+  timeToFinishAttackAnimation: 0.8
+  animationRunMultiplier: 1.5

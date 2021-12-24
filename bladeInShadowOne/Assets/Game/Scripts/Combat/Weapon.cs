@@ -13,7 +13,9 @@ namespace RPG.Combat
         [SerializeField] float percentageBonus = 0;
         [SerializeField] bool isRighthand = true;
         [SerializeField] Projectile projectile = null;
-        //[SerializeField] public AudioClip audioClip;
+        [SerializeField] float timeToFinishAttackAnimation;
+        [SerializeField] float animationRunMultiplier;
+
         const string weaponName = "Weapon";
 
         public void Spawn(Transform rightHandTransform, Transform leftHandTransform, Animator animator)
@@ -63,9 +65,10 @@ namespace RPG.Combat
             Destroy(currentWeapon.gameObject);
         }
 
-        public WeaponComponent GetWeaponcomponent()
-        {
-            return weaponPrefab; 
-        }
+        public WeaponComponent GetWeaponcomponent() { return weaponPrefab; }
+
+        public float GetTimeToFinishAttackAnimation() { return timeToFinishAttackAnimation; }
+
+        public float GetAnimationRunMultiplier() { return animationRunMultiplier; }
     }
 }

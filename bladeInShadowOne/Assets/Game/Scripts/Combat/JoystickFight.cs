@@ -21,7 +21,7 @@ namespace RPG.Combat
         JoystickWeapon currentJoystickWeapon;
         AttackWave currentAttackWave;
         float attackEnemy;
-        float timeToFinishAttackAnimation = 2.5f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
+        float timeToFinishAttackAnimation; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
         float timeSinceAttack = 0f;
         float animationRunMultiplier;
         bool isAttacking = false;

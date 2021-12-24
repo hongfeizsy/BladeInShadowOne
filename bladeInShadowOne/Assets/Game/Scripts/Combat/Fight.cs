@@ -19,10 +19,10 @@ namespace RPG.Combat
         //[SerializeField] string defaultWeaponName = "Unarmed";
         [SerializeField] UnityEvent attackEvent;
 
-        float timeBetweenAttacks = 1.5f;
-        float timeSinceLastAttack = 0f;
         float weaponRange;
-        //float weaponDamage;
+        float timeToFinishAttackAnimation; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 0.8f);
+        float animationRunMultiplier;
+        float timeSinceAttack = 0f;
         float totalDamage;
         Weapon currentWeapon;
 
@@ -36,7 +36,7 @@ namespace RPG.Combat
 
         private void Update()
         {
-            timeSinceLastAttack += Time.deltaTime;
+            timeSinceAttack += Time.deltaTime;
             if (target == null) return;
             if (target.IsDead()) 
             {
@@ -60,12 +60,12 @@ namespace RPG.Combat
         private void AttackBehavior()
         {
             transform.LookAt(target.transform, Vector3.up);
-            if (timeSinceLastAttack >= timeBetweenAttacks)
+            if (timeSinceAttack >= timeToFinishAttackAnimation)
             {
                 // This will trigger the Hit() event
                 GetComponent<Animator>().ResetTrigger("StopAttack");
                 GetComponent<Animator>().SetTrigger("Attack");
-                timeSinceLastAttack = 0f;
+                timeSinceAttack = 0f;
             }
         }
 
@@ -73,7 +73,7 @@ namespace RPG.Combat
         {
             GetComponent<ActionScheduler>().StartAction(this);  // ActionScheduler.currentAction is RPG.Combat.Fighter, even Player is still moving towards to the target.
             target = combatTarget.GetComponent<Health>();
-            GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+            GetComponent<Animator>().SetFloat("RunMultiplier", animationRunMultiplier);
         }
 
         public void Cancel()
@@ -119,7 +119,8 @@ namespace RPG.Combat
             currentWeapon = weapon;
             weaponRange = weapon.GetWeaponRange();
             weapon.Spawn(rightHandTransform, leftHandTransform, GetComponent<Animator>());
-
+            timeToFinishAttackAnimation = weapon.GetTimeToFinishAttackAnimation();
+            animationRunMultiplier = weapon.GetAnimationRunMultiplier();
             if (currentWeapon.GetWeaponcomponent().transform.Find("HitSound"))
             {
                 transform.Find("SoundObjects").Find("MeleeSound").GetComponent<AudioSource>().clip =
