@@ -11,6 +11,7 @@ namespace RPG.Combat
         [SerializeField] Vector3 colliderSize;
         [SerializeField] float maxLifeTime = 0.1f;
         [SerializeField] float speed = 5f;
+        [SerializeField] GameObject hitEffect = null;
         float damage;
         GameObject playerObject;
 
@@ -45,6 +46,14 @@ namespace RPG.Combat
             if (!targetHealth) return;
             if (targetHealth.IsDead()) return;
             targetHealth.TakeDamage(playerObject, this.damage);
+            if (hitEffect) 
+            {
+                CapsuleCollider capCollider;
+                capCollider = playerObject.GetComponent<CapsuleCollider>();
+                GameObject FXEffect = Instantiate(hitEffect, other.transform.position + Vector3.up * (capCollider.height / 2),
+                    Quaternion.identity);
+            }
+            
         }
     }
 }

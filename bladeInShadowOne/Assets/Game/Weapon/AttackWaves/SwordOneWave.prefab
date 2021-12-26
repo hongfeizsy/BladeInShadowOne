@@ -78,3 +78,4 @@ MonoBehaviour:
   colliderSize: {x: 1.3, y: 0.57, z: 1.13}
   maxLifeTime: 0.1
   speed: 5
+  hitEffect: {fileID: 5483016056630809012, guid: 31ff652cd586d584da5331f8fd86628a, type: 3}

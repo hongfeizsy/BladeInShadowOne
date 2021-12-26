@@ -22,6 +22,7 @@
 /Assets/Game/Terrains/
 /Assets/Game/Animations/
 /Assets/Scenes/
+/Assets/Asset Packages/Fonts/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
