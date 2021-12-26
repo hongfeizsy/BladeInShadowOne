@@ -42,14 +42,15 @@ namespace RPG.Core
 
                 inputVec = pos;
                 inputVec = (inputVec.magnitude > 1f) ? inputVec.normalized : inputVec;
-                joystickImg.rectTransform.anchoredPosition = new Vector3(inputVec.x * bgImg.rectTransform.sizeDelta.x / 3,
-                    inputVec.y * bgImg.rectTransform.sizeDelta.y / 3, 0);
+                joystickImg.rectTransform.anchoredPosition = new Vector3(inputVec.x * bgImg.rectTransform.sizeDelta.x / 2f,
+                    inputVec.y * bgImg.rectTransform.sizeDelta.y / 2f, 0);
             }
         }
 
         public Vector3 GetJoystickInputVector()
         {
-            return new Vector3(inputVec.x, 0, inputVec.y);
+            float mutiplier = 1.2f;  // This is only for Android phone. 
+            return new Vector3(inputVec.x, 0, inputVec.y) * mutiplier;
         }
     }
 }
