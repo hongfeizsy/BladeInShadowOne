@@ -13,9 +13,10 @@ namespace RPG.Resources
         [SerializeField] float health;
         [SerializeField] UnityEvent takeDamage;
         [SerializeField] UnityEvent ToDie;
+        [SerializeField] bool needToSetInitialHP;
 
-        bool isDead;
         float initialHealth;
+        bool isDead;
         bool isFromSavedFile = false;
         public event Action onLevelUp;
         int initialLevel;
@@ -35,6 +36,7 @@ namespace RPG.Resources
                 initialLevel = 1;
                 initialHealth = GetComponent<BaseStats>().GetHealth(initialLevel);
                 health = initialHealth;
+                if (needToSetInitialHP) { health = 20f; }
             }
         }
 
