@@ -49,7 +49,7 @@ namespace RPG.Core
 
         public Vector3 GetJoystickInputVector()
         {
-            float mutiplier = 1.2f;  // This is only for Android phone. 
+            float mutiplier = 1f;  // This is only for Android phone. 
             return new Vector3(inputVec.x, 0, inputVec.y) * mutiplier;
         }
     }
