@@ -13,7 +13,7 @@ namespace RPG.Control
     public class JoystickControl : MonoBehaviour
     {
         CapsuleCollider capCollider;
-
+        
         private void Start()
         {
             capCollider = GetComponent<CapsuleCollider>();
@@ -61,16 +61,19 @@ namespace RPG.Control
             Vector3 inputVec = GetComponent<JoystickMove>().GetJoystick().GetJoystickInputVector();
             if (inputVec.magnitude > Mathf.Epsilon)
             {
-                if (inputVec.magnitude < 0.5f)
+                if (inputVec.magnitude < 0.3f)
                 {
-                    float targetAngle = GetRotationAngle(new Vector2(0, 1), new Vector2(inputVec.x, inputVec.z));
-                    float currentAngle = transform.eulerAngles.y;
-                    float direction = GetRotationDirection(currentAngle, targetAngle);
-                    if (Mathf.Abs(currentAngle - targetAngle) > 5) { transform.Rotate(new Vector3(0f, direction * 500 * Time.deltaTime, 0)); }
+                    RotateBody(inputVec);
+                    //float targetAngle = GetRotationAngle(new Vector2(0, 1), new Vector2(inputVec.x, inputVec.z));
+                    //float currentAngle = transform.eulerAngles.y;
+                    //float direction = GetRotationDirection(currentAngle, targetAngle);
+                    //if (Mathf.Abs(currentAngle - targetAngle) > 5) { transform.Rotate(new Vector3(0f, direction * 500 * Time.deltaTime, 0)); }
                 }
                 else
                 {
+                    RotateBody(inputVec);
                     GetComponent<JoystickMove>().StartMoveAction(1f);
+                    //print(inputVec.magnitude);
                 }
                 return true;
             }
@@ -78,6 +81,14 @@ namespace RPG.Control
             {
                 return false;
             }
+        }
+
+        private void RotateBody(Vector3 inputVec)
+        {
+            float targetAngle = GetRotationAngle(new Vector2(0, 1), new Vector2(inputVec.x, inputVec.z));
+            float currentAngle = transform.eulerAngles.y;
+            float direction = GetRotationDirection(currentAngle, targetAngle);
+            if (Mathf.Abs(currentAngle - targetAngle) > 5) { transform.Rotate(new Vector3(0f, direction * 500 * Time.deltaTime, 0)); }
         }
 
         private float GetRotationAngle(Vector2 from, Vector2 to)
