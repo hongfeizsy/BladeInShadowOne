@@ -48,16 +48,16 @@ namespace RPG.Combat
             GetComponent<Animator>().ResetTrigger("StopEscape");
             GetComponent<Animator>().SetTrigger("Escape");
             GetComponent<Animator>().SetFloat("RunMultiplier", 1.2f);
-            GetComponent<NavMeshAgent>().height = 0.0f;
-            GetComponent<NavMeshAgent>().enabled = false;
+            //GetComponent<NavMeshAgent>().height = 0.0f;
+            //GetComponent<NavMeshAgent>().enabled = false;
         }
 
         public void Cancel()
         {
             GetComponent<Animator>().ResetTrigger("Escape");
             GetComponent<Animator>().SetTrigger("StopEscape");
-            GetComponent<NavMeshAgent>().height = 2f;
-            GetComponent<NavMeshAgent>().enabled = true;
+            //GetComponent<NavMeshAgent>().height = 2f;
+            //GetComponent<NavMeshAgent>().enabled = true;
         }
     }
 }
