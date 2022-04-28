@@ -17,6 +17,8 @@ namespace RPG.Movement
         Vector3 lastPos;
         Vector3 currentPos;
         Vector3 inputVec;
+        Vector3 velocity;
+        float gravity;
 
         void Start()
         {
@@ -28,6 +30,7 @@ namespace RPG.Movement
             characterController.minMoveDistance = 0.01f;
             maxSpeed = 6f;
             inputVec = joystick.GetJoystickInputVector();
+            gravity = 9.8f;
         }
 
         void LateUpdate()
@@ -36,52 +39,32 @@ namespace RPG.Movement
             //if (inputVec.magnitude > 0.1f) { print(inputVec.magnitude); }
             UpdateAnimator();
             lastPos = currentPos;
+            //if (characterController.isGrounded && velocity.y < 0) { velocity.y = -2f; }
+            //velocity.y += gravity * Time.deltaTime;
+
+            //characterController.Move(velocity * Time.deltaTime);
+            //Physics.gravity = new Vector3(0f, 0f, 0f);
         }
 
         private void UpdateAnimator()
         {
-            //Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
-            //float speed = MeasureSpeed();
             inputVec = joystick.GetJoystickInputVector();
             float speed = inputVec.magnitude;
-            //print(speed);
-            //Vector3 velocity = characterController.velocity;
-            //Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            //float speed = localVelocity.z;
             if (speed < 10f)
             {
                 GetComponent<Animator>().SetFloat("ForwardSpeed", speed);
             }
         }
 
-        private float MeasureSpeed()   // It seems that Character.Velocity does not work.
-        {
-            currentPos = transform.position;
-            Vector3 velocity = (currentPos - lastPos) / Time.deltaTime;
-            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            lastPos = currentPos;
-            return Mathf.Abs(localVelocity.z);
-        }
-
         public void StartMoveAction(float speedFraction)
         {
             GetComponent<ActionScheduler>().StartAction(this);
-            //if (agent.enabled) { MoveTo(speedFraction); }
             if (characterController.enabled) { MoveTo(speedFraction); }
         }
 
         private void MoveTo(float speedFraction)
         {
-            //Vector3 movement = joystick.GetJoystickInputVector();
-            //Vector3 movement = inputVec;
             characterController.Move(inputVec * maxSpeed * speedFraction * Time.deltaTime);
-            //print("Character controll velocity: " + characterController.velocity);
-
-            //agent.Move(movement * maxSpeed * speedFraction * Time.deltaTime);
-            //agent.updateRotation = true;
-            //agent.velocity = movement * maxSpeed * speedFraction;
-            //agent.acceleration = 100;
-            //agent.isStopped = false;
         }
 
         public void Cancel()

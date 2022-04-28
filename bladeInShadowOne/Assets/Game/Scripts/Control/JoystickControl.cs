@@ -17,6 +17,7 @@ namespace RPG.Control
         private void Start()
         {
             capCollider = GetComponent<CapsuleCollider>();
+            Physics.gravity = new Vector3(0f, 0f, 0f);
         }
 
         private void Update()
@@ -24,6 +25,8 @@ namespace RPG.Control
             if (GetComponent<Health>().IsDead()) { return; }
 
             if (InteractWithEscape()) { return; }
+
+            if (InteractWithJump()) { return; }
 
             if (InteractWithEnemy()) { return; }
 
@@ -38,6 +41,11 @@ namespace RPG.Control
                 joystickEscape.StartEscapeAction();
                 return true;
             }
+            return false;
+        }
+
+        private bool InteractWithJump()
+        {
             return false;
         }
 
