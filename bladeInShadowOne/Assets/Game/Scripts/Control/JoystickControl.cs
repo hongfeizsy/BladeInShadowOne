@@ -17,7 +17,7 @@ namespace RPG.Control
         private void Start()
         {
             capCollider = GetComponent<CapsuleCollider>();
-            Physics.gravity = new Vector3(0f, 0f, 0f);
+            Physics.gravity = new Vector3(0f, -9.8f, 0f); // This can also be implemented with the method described by Brackeys (First Person Movement in Unity).
         }
 
         private void Update()
@@ -46,6 +46,13 @@ namespace RPG.Control
 
         private bool InteractWithJump()
         {
+            JoystickJump joystickJump = GetComponent<JoystickJump>();
+            if (joystickJump.IsJumping())
+            {
+                print("Jump.");
+                joystickJump.StartJumpAction();
+                return true;
+            }
             return false;
         }
 
