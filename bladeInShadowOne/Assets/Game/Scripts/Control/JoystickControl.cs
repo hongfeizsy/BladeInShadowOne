@@ -49,7 +49,6 @@ namespace RPG.Control
             JoystickJump joystickJump = GetComponent<JoystickJump>();
             if (joystickJump.IsJumping())
             {
-                print("Jump.");
                 joystickJump.StartJumpAction();
                 return true;
             }

@@ -3,27 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Core;
 using UnityStandardAssets.CrossPlatformInput;
+using RPG.Resources;
 
 namespace RPG.Combat
 {
     public class JoystickJump : MonoBehaviour, IAction
     {
+        [SerializeField] float jumpHeight = 3f;
         CharacterController characterController;
         float ifJump;
         bool isGrounded;
         bool isJumping = false;
+        float gravityValue = -9.81f;
+        Vector3 playerVelocity;
+        float timeSinceEscape = 0f;
+        float timeToFinishEscapeAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
 
         // Start is called before the first frame update
         void Start()
         {
             characterController = GetComponent<CharacterController>();
+            characterController.enabled = !GetComponent<Health>().IsDead();
+            characterController.minMoveDistance = 0.01f;
             isGrounded = characterController.isGrounded;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (isJumping)
+            {
+                isGrounded = characterController.isGrounded;
+                if (isGrounded && playerVelocity.y < 0)
+                {
+                    playerVelocity.y = 0f;
+                }
 
+                playerVelocity.y += gravityValue * Time.deltaTime;
+                characterController.Move(playerVelocity * Time.deltaTime);
+
+                //timeSinceEscape += Time.deltaTime;
+                //if (timeSinceEscape >= timeToFinishEscapeAnimation)
+                //{
+                //    isJumping = false;
+                //    timeSinceEscape = 0;
+                //    Cancel();
+                //}
+            }
         }
 
         public bool IsJumping()
@@ -31,8 +57,13 @@ namespace RPG.Combat
             ifJump = CrossPlatformInputManager.VirtualAxisReference("Jump").GetValue;
             if (ifJump > Mathf.Epsilon)
             {
-                isJumping = true;
-                return true;
+                isGrounded = characterController.isGrounded;
+                if (isGrounded)
+                {
+                    isJumping = true;
+                    return true;
+                }
+                return false;
             }
 
             else { return false; }
@@ -40,7 +71,9 @@ namespace RPG.Combat
 
         public void StartJumpAction()
         {
-            
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
+            print(playerVelocity);
+            characterController.Move(playerVelocity * Time.deltaTime);
         }
 
         public void Cancel()
