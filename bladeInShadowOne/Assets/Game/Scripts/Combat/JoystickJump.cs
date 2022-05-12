@@ -16,8 +16,8 @@ namespace RPG.Combat
         bool isJumping = false;
         float gravityValue = -9.81f;
         Vector3 playerVelocity;
-        float timeSinceEscape = 0f;
-        float timeToFinishEscapeAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+        float timeSinceJump = 0f;
+        float timeToFinishJumpAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
 
         // Start is called before the first frame update
         void Start()
@@ -42,13 +42,13 @@ namespace RPG.Combat
                 playerVelocity.y += gravityValue * Time.deltaTime;
                 characterController.Move(playerVelocity * Time.deltaTime);
 
-                //timeSinceEscape += Time.deltaTime;
-                //if (timeSinceEscape >= timeToFinishEscapeAnimation)
-                //{
-                //    isJumping = false;
-                //    timeSinceEscape = 0;
-                //    Cancel();
-                //}
+                timeSinceJump += Time.deltaTime;
+                if (timeSinceJump >= timeToFinishJumpAnimation)
+                {
+                    isJumping = false;
+                    timeSinceJump = 0;
+                    Cancel();
+                }
             }
         }
 
@@ -72,7 +72,6 @@ namespace RPG.Combat
         public void StartJumpAction()
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
-            print(playerVelocity);
             characterController.Move(playerVelocity * Time.deltaTime);
         }
 
