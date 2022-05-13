@@ -9,7 +9,7 @@ namespace RPG.Combat
 {
     public class JoystickJump : MonoBehaviour, IAction
     {
-        [SerializeField] float jumpHeight = 3f;
+        [SerializeField] float jumpHeight;
         CharacterController characterController;
         float ifJump;
         bool isGrounded;
@@ -17,7 +17,7 @@ namespace RPG.Combat
         float gravityValue = -9.81f;
         Vector3 playerVelocity;
         float timeSinceJump = 0f;
-        float timeToFinishJumpAnimation = 1f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
+        float timeToFinishJumpAnimation = 1.5f; // To be adjusted due to GetComponent<Animator>().SetFloat("RunMultiplier", 1f);
 
         // Start is called before the first frame update
         void Start()
@@ -72,12 +72,18 @@ namespace RPG.Combat
         public void StartJumpAction()
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
-            characterController.Move(playerVelocity * Time.deltaTime);
+            //characterController.Move(playerVelocity * Time.deltaTime);
+
+            GetComponent<ActionScheduler>().StartAction(this);
+            GetComponent<Animator>().ResetTrigger("StopJump");
+            GetComponent<Animator>().SetTrigger("Jump");
+            GetComponent<Animator>().SetFloat("RunMultiplier", 1.5f);
         }
 
         public void Cancel()
         {
-
+            GetComponent<Animator>().ResetTrigger("Jump");
+            GetComponent<Animator>().SetTrigger("StopJump");
         }
     }
 }

@@ -412,13 +412,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1412325610}
     m_Modifications:
+    - target: {fileID: 373058728, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 373058730, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1935998906}
     - target: {fileID: 971846956, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: jumpHeight
-      value: 5
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896219447, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5766799921343201413, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: m_RootOrder
@@ -1739,6 +1747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samurai_Grunt_White
       objectReference: {fileID: 0}
+    - target: {fileID: 408744, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06740093
+      objectReference: {fileID: 0}
     - target: {fileID: 488250, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2085,6 +2097,22 @@ PrefabInstance:
     - target: {fileID: 170078, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
       propertyPath: m_Name
       value: Samurai_Grunt_White (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 408744, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.06741118
+      objectReference: {fileID: 0}
+    - target: {fileID: 408744, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9294621
+      objectReference: {fileID: 0}
+    - target: {fileID: 408744, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.46113667
+      objectReference: {fileID: 0}
+    - target: {fileID: 408744, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.46113652
       objectReference: {fileID: 0}
     - target: {fileID: 488250, guid: 663744203cf3cf6458b7610aaafe90e1, type: 3}
       propertyPath: m_RootOrder
