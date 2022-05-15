@@ -416,13 +416,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 373058728, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 373058730, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1935998906}
     - target: {fileID: 971846956, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: jumpHeight
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1896219447, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: m_Enabled

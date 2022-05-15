@@ -71,9 +71,6 @@ namespace RPG.Combat
 
         public void StartJumpAction()
         {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
-            //characterController.Move(playerVelocity * Time.deltaTime);
-
             GetComponent<ActionScheduler>().StartAction(this);
             GetComponent<Animator>().ResetTrigger("StopJump");
             GetComponent<Animator>().SetTrigger("Jump");
@@ -84,6 +81,11 @@ namespace RPG.Combat
         {
             GetComponent<Animator>().ResetTrigger("Jump");
             GetComponent<Animator>().SetTrigger("StopJump");
+        }
+
+        void FlyToTheSky()
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
         }
     }
 }
