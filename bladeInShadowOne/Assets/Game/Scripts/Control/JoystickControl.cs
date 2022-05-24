@@ -13,7 +13,8 @@ namespace RPG.Control
     public class JoystickControl : MonoBehaviour
     {
         CapsuleCollider capCollider;
-        
+        bool willJump = false;
+
         private void Start()
         {
             capCollider = GetComponent<CapsuleCollider>();
@@ -24,9 +25,16 @@ namespace RPG.Control
         {
             if (GetComponent<Health>().IsDead()) { return; }
 
-            if (InteractWithEscape()) { return; }
+            if (!willJump) { if (InteractWithEscape()) { return; } }
 
-            if (InteractWithJump()) { return; }
+            if (willJump)
+            {
+                if (InteractWithJump())
+                {
+                    ResetJumpStatus();
+                    return;
+                }
+            }
 
             if (InteractWithEnemy()) { return; }
 
@@ -124,5 +132,8 @@ namespace RPG.Control
         {
             return transform.position + Vector3.up * capCollider.height / 3 + transform.TransformDirection(Vector3.forward * 10);
         }
+
+        public void SetJumpStatus() { willJump = true; }
+        public void ResetJumpStatus() { willJump = false; }
     }
 }
