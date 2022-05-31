@@ -22,8 +22,6 @@ namespace RPG.Control
             capCollider = GetComponent<CapsuleCollider>();
             Physics.gravity = new Vector3(0f, -9.81f, 0f); // This can also be implemented with the method described by Brackeys (First Person Movement in Unity).
 
-            //GameObject temp = GameObject.Find("Jump Button");
-            //temp.SetActive(false);
             escapeButton.SetActive(true);
             jumpButton.SetActive(false);
         }

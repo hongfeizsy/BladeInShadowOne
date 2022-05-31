@@ -247,6 +247,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7498170647279240979, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
   m_PrefabInstance: {fileID: 7498170647164142590}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &159326033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7498170647582924644, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+  m_PrefabInstance: {fileID: 7498170647164142590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199146723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -412,26 +417,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1412325610}
     m_Modifications:
-    - target: {fileID: 373058728, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 373058728, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 373058729, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: jumpButton
+      value: 
+      objectReference: {fileID: 379241032}
+    - target: {fileID: 373058729, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
+      propertyPath: escapeButton
+      value: 
+      objectReference: {fileID: 159326033}
     - target: {fileID: 373058730, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1935998906}
-    - target: {fileID: 971846956, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
-      propertyPath: jumpHeight
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896219447, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5766799921343201413, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -486,6 +483,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5766799921343201413, guid: 44f1ffbff8c433e43a43f2c6e1917c78, type: 3}
   m_PrefabInstance: {fileID: 373058724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &379241032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 93225271, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+  m_PrefabInstance: {fileID: 7498170647164142590}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &398603145
 PrefabInstance:
@@ -3600,6 +3602,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1412325610}
     m_Modifications:
+    - target: {fileID: 93225272, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 93225272, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 224
+      objectReference: {fileID: 0}
+    - target: {fileID: 456171014488274337, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7498170647279240978, guid: 9e2136134508ce8499b4a37694d306d1, type: 3}
       propertyPath: m_Name
       value: Hud

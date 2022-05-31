@@ -12,7 +12,14 @@ namespace RPG.Combat
             if (other.tag == "Player")
             {
                 other.GetComponent<JoystickControl>().SetJumpStatus();
+                HidePickup();
             }
+        }
+
+        private void HidePickup()
+        {
+            GetComponent<Collider>().enabled = false;
+            gameObject.SetActive(false);
         }
     }
 }
