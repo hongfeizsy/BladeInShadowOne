@@ -12,6 +12,8 @@ namespace RPG.Control
 {
     public class JoystickControl : MonoBehaviour
     {
+        [SerializeField] GameObject jumpButton;
+        [SerializeField] GameObject escapeButton;
         CapsuleCollider capCollider;
         bool willJump = false;
 
@@ -19,16 +21,28 @@ namespace RPG.Control
         {
             capCollider = GetComponent<CapsuleCollider>();
             Physics.gravity = new Vector3(0f, -9.81f, 0f); // This can also be implemented with the method described by Brackeys (First Person Movement in Unity).
+
+            //GameObject temp = GameObject.Find("Jump Button");
+            //temp.SetActive(false);
+            escapeButton.SetActive(true);
+            jumpButton.SetActive(false);
         }
 
         private void Update()
         {
             if (GetComponent<Health>().IsDead()) { return; }
 
-            if (!willJump) { if (InteractWithEscape()) { return; } }
+            if (!willJump) 
+            {
+                escapeButton.SetActive(true);
+                jumpButton.SetActive(false);
+                if (InteractWithEscape()) { return; } 
+            }
 
             if (willJump)
             {
+                escapeButton.SetActive(false);
+                jumpButton.SetActive(true);
                 if (InteractWithJump())
                 {
                     ResetJumpStatus();
